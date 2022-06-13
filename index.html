@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <link rel="shortcut icon" href="src/img/logo-2.png" type="image/x-icon">
+    <link rel="stylesheet" href="src/css/style.css">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <div class="logo">
+                <a href="index.html"><img src="src/img/Fudo..png" alt=""></a>
+            </div>
+   
+            <div class="box-icon-menu">
+                <label for="check"> <i class='bx bx-menu'></i></label>
+                <input type="checkbox" id="check">
+                <label for="check"><span for="check" class="overlay"></span></label>
+                <div class="menu-mobile-tablet">
+                    <ul>
+                        <label for="check" class='bx bx-x'></label>
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="product.html">Products</a></li>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="">Settings</a></li>
+                        <li><button><a href="sign-in.html">Sign In</a></button><button><a href="sign-up.html">Sign Up</a></button></li>
+                    </ul> 
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a class="menu-list active" href="index.html">Home</a></li>
+                    <li><a class="menu-list" href="product.html">Products</a></li>
+                    <li><a class="menu-list" href="about.html">About Us</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a class="menu-list" href="contact.html">Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="signIn-signUp">
+                <div class="icon"><a href="cart.html" class='bx bx-cart'></a></div>
+                <button class="sign-in"><a href="sign-in.html">Sign in</a></button>
+                <button class="sign-up"><a href="sign-up.html">Sign up</a></button>
+            </div>
+        </header>
+        <main>
+            <div class="banner">
+                <div class="banner-left">
+                    <button>Quality Food</button>
+                    <div class="title-banner">
+                        <a>
+                            Fastest <br> <span>Delivery</span> & <br> Easy <span>Pickup</span>
+                        </a>
+                        <p>Best cooks and best delivery guys all at your service. Hot tasty food will reach you in 60
+                            minutes.</p>
+                    </div>
+                    <form action="">
+                        <input type="text" name="" id="input" placeholder="Enter your delivery location" required>
+                        <input type="submit" value="Discover" id="input-1">
+                    </form>
+                </div>
+                <div class="banner-right">
+                    <div class="box-parent">
+                        <div class="box-child">
+                            <img src="src/img/photo-satisfied-woman-holds-piece-pizza-feels-pleased-as-spends-free-time-with-friends-pizzeria-looks-happily-directly-wears-casual-outfit-isolated-yellow-wall-lunch-removebg 1.png"
+                                alt="">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="list-product">
+                <div class="title-product">
+                    <h1>Our Popular Dishes</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetuipisicing elit, sed do eiusmod tempor incididunt ut labore
+                        et dolore magna aliqut enim ad minim </p>
+                </div>
+
+                <select name="" id="select-price">
+                    <option value="">Price selection</option>
+                    <option value="1">All</option>
+                    <option value="2">More than 30 $</option>
+                    <option value="3">Less than 30 $</option>
+                </select>
+
+                <div class="main-product">
+                </div>
+            </div>
+
+            <div class="categories">
+                <div class="title-btn">
+                    <p>Categories</p>
+                    <button>View All Categories</button>
+                </div>
+                <div class="box-items">
+                    
+                </div>
+
+            </div>
+            <div class="contact">
+                <p>Contact us</p>
+                <form action="">
+
+                    <div class="form-left">
+                        <label for="">Name</label><br>
+                        <input type="text" name="" id="name" placeholder="Enter your name..." required>
+                        <span></span>
+
+                        <br><label for="">Subject</label><br>
+                        <input type="text" name="" id="subject" placeholder="Enter subject..." required> 
+                        <span></span>
+
+                    </div>
+
+                    <div class="form-right">
+                        <label for="">emAIL aDDRESS</label><br>
+                        <input type="email" name="" id="email" placeholder="Your email address..." required>
+                        <span></span>
+
+                        <br><label for="">ENquiry type</label><br>
+                        <select name="" id="select" required>
+                            <option value="">Advertising</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                        </select>
+                        <span></span>
+
+                    </div>
+                    <div class="form-bottom">
+                        <br><label for="">MEssages</label><br>
+                        <textarea name="" id="messages" cols="30" rows="10" placeholder="Enter your messages..."></textarea>
+                        <input type="button" value="Submit" name="" id="submitContact">
+                    </div>
+
+                </form>
+            </div>
+        </main>
+        <footer>
+            <img src="src/img/Fudo..png" alt="">
+
+            <ul>
+                <li><a href="">Home</a></li>
+                <li><a href="">Products</a></li>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Contact Us</a></li>
+            </ul>
+
+        </footer>
+    </div>
+    <script src="./src/js/main.js"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+</body>
+
+</html>
