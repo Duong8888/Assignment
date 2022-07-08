@@ -10,6 +10,7 @@
     margin: auto;
     font-family: 'Inter', sans-serif;
     height: auto;
+
 }
 
 header {
@@ -2086,16 +2087,146 @@ main {
     border-radius: 10px;
     overflow: hidden;
 }
+.add{
+    width: 49%;
+    height: 585px;
+    font-size: 150px;
+    margin: 20px 0;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0 0 10px #ccc;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+}
+.add>p{
+    font-size: 20px;
+}
+.add>i{
+    transition: 0.25s;
+}
+.add:hover i{
+    transform: scale(1.2);
+}
 
 .box-news .newImg {
     width: 100%;
     height: 45%;
 }
 
+.add-News-info{
+    position: fixed;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    top: 20px;
+    left: 200px;
+    right: 200px;
+    bottom: 20px;
+    background-color: #ffffff;
+    z-index: 100;
+    padding: 40px;
+    border-radius: 10px;
+    overflow: hidden;
+    transform: translateY(120%);
+    box-shadow: 0 0 20px black;
+    transition: 0.25s;
+}
+.add-News-info>i {
+    font-size: 40px;
+    color: rgb(0, 0, 0);
+    position: absolute;
+    right: 0;
+    top: 0;
+    display: inline-block;
+}
+.add-News-info>i:hover {
+    background-color: #F54748;
+    color: #fff;   
+}
+.box-title{
+    width: 50%;
+    height: auto;
+}
+.box-title>label{
+    display: block;
+    font-size: 15px;
+    text-transform: uppercase;
+    margin: 0 0 5px 20px;
+}
+#add-title,
+#add-subTitle {
+    width: 100%;
+    height: 50px;
+    border-radius: 10px;
+    border: 1px solid #37A9CD;
+    padding-left: 20px;
+    margin-bottom: 20px;
+    outline-color: #37A9CD;
+}
+
+#selectAdd{
+    width: 100%;
+    height: 50px;
+    border: 1px solid #37A9CD;
+    outline-color: #37A9CD;
+    margin-top: 10px;
+}
+
+#add-content {
+    width: 100%;
+    height: 100px;
+    margin: 20px 0;
+    border-radius: 10px;
+    padding: 10px;
+    border: 1px solid #37A9CD;
+    outline-color: #37A9CD;
+}
+#btnAdd{
+    width: 200px;
+    height: 50px;
+    margin: auto;
+    border-radius: 10px;
+    border: 1px solid #37A9CD;
+    background-color: #fff;
+    color: #37A9CD;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 0.25s;
+}
+#btnAdd:hover{
+    background-color: #37A9CD;
+    color: #fff;
+}
+.addImg{
+    width: 45%;
+    height: 260px;
+    border-radius: 10px;
+    border: 4px dashed rgb(0, 0, 0);
+    overflow: hidden;
+}
+.addImg>label{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+}
+.addImg>label>i{
+    font-size: 80px;
+}
+.addImg>label>img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 .newImg img {
     object-fit: cover;
     width: 100%;
     height: 100%;
+    z-index: 20;
 }
 
 .infoUser {

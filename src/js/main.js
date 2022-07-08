@@ -106,9 +106,6 @@ const ListBlogNews = [
         content: "Chiêu 1 - Cắt Giang Sơn,Chiêu 2 - Trảm Thiên ĐịaChiêu 3 - Đạo Quân Vương.Yue là công chúa thứ 10 trong hoàng tộc Vương Quốc Rồng. Ngoài dung mạo xinh đẹp, Yue còn có trí tuệ và năng lực tuyệt đỉnh. Trong video giới thiệu phiên bản Trung Quốc, Yue có vẻ như là bạn bè và có chút liên quan tới Qi - cô nàng Võ Sư Bánh Bao.",
         BlogCategoryId: 2
     },
-
-
-
 ];
 
 const BlogCategory = [
@@ -285,12 +282,12 @@ function reRender(cateId) {
     }
 };
 var selectMoblie = document.querySelector('.category-product>select');
-function filterMoblie(select){
-        const filterCategoryMobile = ListProduct.filter(function (item) {
+function filterMoblie(select) {
+    const filterCategoryMobile = ListProduct.filter(function (item) {
         return item.category == select.value;
-        });
+    });
 
-        if (selectMoblie) {
+    if (selectMoblie) {
         for (let i in ListProduct) {
             boxProduct[i].innerHTML = ``;
         }
@@ -308,6 +305,7 @@ function filterMoblie(select){
 // cart
 
 // let arrCart = [];
+// var a = localStorage[arrCart];
 // function addCart() {
 //     var name = document.querySelector('.product-detail-left>h1');
 //     var price = document.querySelector('.product-detail-left>span');
@@ -320,9 +318,6 @@ function filterMoblie(select){
 //         quantityCart: `${quantity.value}`,
 //         imageCart: `${image.src}`
 //     });
-//     // console.log(arrCart);
-//     localStorage.setItem('objectCart',JSON.stringify(arrCart));
-//     console.log(localStorage.getItem('objectCart'));
 //     if (arrCart.length > 0) {
 //         for (let i of arrCart) {
 //             if (cart) {
@@ -338,6 +333,8 @@ function filterMoblie(select){
 //         }
 //     }
 // }
+
+// and cart
 
 // validate from
 
@@ -379,7 +376,7 @@ function checkFrom() {
         } else {
             span[4].innerText = "";
         }
-        if(countErro == 0){
+        if (countErro == 0) {
             swal("Sent", "Sign Up Success.", "success");
         }
     } else if (signIn) {
@@ -395,10 +392,10 @@ function checkFrom() {
         } else {
             span[2].innerText = "";
         }
-        if(countErro == 0){
+        if (countErro == 0) {
             swal("Sent", "Logged in successfully.", "success");
         }
-    }else if(Contact) {
+    } else if (Contact) {
         if (name.value.length == 0) {
             span[3].innerText = "Please enter your name.";
             countErro++;
@@ -423,7 +420,7 @@ function checkFrom() {
         } else {
             span[6].innerText = "";
         }
-        if(countErro == 0){
+        if (countErro == 0) {
             swal("Sent", "Submitted Successfully.", "success");
         }
     } else {
@@ -439,7 +436,7 @@ function checkFrom() {
         } else {
             span[8].innerText = "";
         }
-        if(countErro == 0){
+        if (countErro == 0) {
             swal("Sent", "Submitted Successfully.", "success");
         }
     }
@@ -460,7 +457,7 @@ if (Contact) {
 let news = document.querySelector('.news');
 function displayBlogNews(items) {
     if (news) {
-        news.innerHTML = ``;
+        news.innerHTML = `<div class="add" onclick="mora()"><i class='bx bxs-file-plus'></i><p>Add News</p> </div>`;
         for (let i of items) {
             news.innerHTML += `
         <div class="box-news">
@@ -487,7 +484,60 @@ function displayBlogNews(items) {
         }
     }
 }
+
 if (news) { displayBlogNews(ListBlogNews); }
+
+// add news
+
+let NewsInfo = document.querySelector('.add-News-info');
+let btnAdd = document.querySelector('#btnAdd');
+let addTitle = document.querySelector('#add-title');
+let addSubTitle = document.querySelector('#add-subTitle');
+let selectAdd = document.querySelector('#selectAdd');
+let addImg = document.querySelector('#add-img');
+let addContent = document.querySelector('#add-content');
+let img1 = document.querySelector('.addImg>label>img');
+let iconAdd = document.querySelector('#icon1');
+
+
+let closeNew = document.querySelector('.add-News-info>.bx-x');
+if (closeNew) {
+    function mora() {
+        NewsInfo.style.display = 'flex'
+        NewsInfo.style.zIndex = '10'
+        NewsInfo.style.transform = 'translateY(0%)';
+    };
+    closeNew.addEventListener('click', function () {
+        NewsInfo.style.zIndex = '-1'
+        NewsInfo.style.transform = 'translateY(120%)';
+    });
+
+    addImg.addEventListener('change', function () {
+        iconAdd.style.display = "none"
+        img1.src = URL.createObjectURL(addImg.files[0]);
+    });
+    var idAdd = 3;
+    btnAdd.addEventListener('click', function () {
+        idAdd++;
+        let infoNewsAdd = {
+            id: idAdd,
+            title: addTitle.value,
+            subTitle: addSubTitle.value,
+            img: img1.src,
+            content: addContent.value,
+            BlogCategoryId: selectAdd.value
+        }
+        ListBlogNews.unshift(infoNewsAdd);
+        console.log(selectAdd.value);
+        NewsInfo.style.zIndex = '-1';
+        NewsInfo.style.transform = 'translateY(120%)';
+
+        if (news) { displayBlogNews(ListBlogNews); }
+    });
+}
+
+
+// end add news
 let overlay = document.querySelector('.main-blog>.overlay');
 let newsDetails = document.querySelector('.news-details');
 function displayNews(items) {
